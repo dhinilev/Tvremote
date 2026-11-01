@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -o EVTVRemote.zip -x ".github/*"
+      - run: sed -i 's/spongycastle:pkix:1.58.0.0/spongycastle:bcpkix-jdk15on:1.58.0.0/' app/build.gradle.kts
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
